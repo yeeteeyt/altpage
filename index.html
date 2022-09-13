@@ -1,31 +1,50 @@
-<DOCTYPE html>
-  <title>Alt page</title>
+
+
+<div id="scroll-container">
+  <div id="scroll-text">Hello, this is a site. Why have you found it? Stay away from things you shouldn't snoop about. LEAVE!<div>
+</div>
 
 
 
+<style>
+  #scroll-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
-
-
-
-
-
-
-
-<b>This is under development!</b>
-<p>If you think this is an error, contact me:</p>
-<bold>thaone5866.github.io</b>
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
   
-  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-  </canvas>
-  
-  
-  
-  
-  <script>
-   var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    ctx.moveTo(0, 0);
-    ctx.lineTo(200, 100);
-    ctx.stroke();
-    </script>
-<script>window.alert("this page is not working")</script>
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+</style>
